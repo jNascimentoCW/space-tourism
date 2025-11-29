@@ -17,10 +17,12 @@ const ContentContainer = styled.div`
   @media (max-width: 768px) {
     justify-content: space-evenly;
     flex-direction: column;
+    height: auto;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
     flex-direction: column;
+    height: auto;
   }
 `;
 
@@ -34,7 +36,7 @@ const Content = styled.div`
   text-align: center;
 
   @media (max-width: 768px) {
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     width: 100%;
   }
 
