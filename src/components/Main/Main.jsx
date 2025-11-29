@@ -36,7 +36,7 @@ const Content = styled.div`
   text-align: center;
 
   @media (max-width: 768px) {
-    padding: 2rem 2rem;
+    padding: 0 2rem;
     width: 100%;
   }
 
