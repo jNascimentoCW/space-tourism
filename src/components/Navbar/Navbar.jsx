@@ -9,9 +9,9 @@ import LogoImg from "../../assets/shared/logo.svg";
 const NavbarDiv = styled.div`
   position: absolute;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
+  justify-content: space-between;
+  width: 100%;
   z-index: 1000;
 `;
 

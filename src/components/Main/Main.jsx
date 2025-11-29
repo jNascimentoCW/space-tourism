@@ -12,6 +12,7 @@ const ContentContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding-top: 5rem;
   height: 100vh;
 
   @media (max-width: 768px) {
@@ -21,6 +22,7 @@ const ContentContainer = styled.div`
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
+    padding-top: 12rem;
     flex-direction: column;
     height: auto;
   }
@@ -93,7 +95,6 @@ const ExploreBtn = styled.p`
 export default function Main() {
   return (
     <Container>
-      <Navbar />
       <ContentContainer>
         <Content>
           <ContentP>So, you want to travel to</ContentP>
