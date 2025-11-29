@@ -13,6 +13,14 @@ const ContentContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 const Content = styled.div`
@@ -23,6 +31,16 @@ const Content = styled.div`
   justify-content: center;
   padding: 6rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 100%;
+    padding: 4rem;
+  }
 `;
 
 const ContentP = styled.p`
@@ -47,10 +65,17 @@ const ExploreBtn = styled.p`
   align-items: center;
   align-self: center;
   position: relative;
+  font-weight: 500;
+  font-size: 1.2rem;
 
   &:hover {
     box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.8);
     transition: box-shadow 0.4s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    width: 10rem;
+    height: 10rem;
   }
 `;
 
