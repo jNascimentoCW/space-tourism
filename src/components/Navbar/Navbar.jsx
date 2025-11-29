@@ -7,10 +7,12 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import LogoImg from "../../assets/shared/logo.svg";
 
 const NavbarDiv = styled.div`
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 1000;
 `;
 
 const NavbarNav = styled.div`
@@ -69,6 +71,10 @@ const DivBtn = styled.div`
 const Logo = styled.div`
   padding: 2rem;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const Hr = styled.div`

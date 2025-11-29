@@ -15,6 +15,7 @@ const ContentContainer = styled.div`
   height: 100vh;
 
   @media (max-width: 768px) {
+    justify-content: space-evenly;
     flex-direction: column;
   }
 
@@ -46,11 +47,19 @@ const Content = styled.div`
 const ContentP = styled.p`
   font-size: 1.2rem;
   font-weight: 100;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const ContentSpan = styled.span`
   font-size: 7rem;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 4rem;
+  }
 `;
 
 const ExploreBtn = styled.p`
