@@ -1,6 +1,5 @@
 body {
   background-color: #000000;
-  background-image: url("../assets/home/background-home-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -13,6 +12,6 @@ body {
 
 @media (max-width: 768px) {
   body {
-    background-image: url("../assets/home/background-home-mobile.jpg");
+    /* background-image: url("../assets/home/background-home-mobile.jpg"); */
   }
 }
