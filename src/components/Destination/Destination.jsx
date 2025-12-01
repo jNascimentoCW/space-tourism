@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import styled from "styled-components";
 
 import HomeDesktopBgImg from "/src/assets/destination/background-destination-desktop.jpg";
@@ -6,8 +8,14 @@ import HomeMobileBgImg from "/src/assets/destination/background-destination-mobi
 
 import Content from "../Content/Content";
 
+import data from "../../data/data.json";
+
 const Paragraph = styled.p`
   font-size: 1.2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const Carounsel = styled.div`
@@ -23,15 +31,27 @@ const CarouselContent = styled.div`
   font-size: 1rem;
   font-weight: 300;
   border-bottom: 2px solid transparent;
+  text-transform: uppercase;
+  border-bottom: 2px solid
+    ${(props) => (props.$active ? "white" : "transparent")};
 
   &:hover {
     border-bottom: 2px solid white;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 0.5rem;
   }
 `;
 
 const Span = styled.span`
   font-size: 5rem;
-  font-weight: 500;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 const PlanetsImg = styled.div`
@@ -41,6 +61,13 @@ const PlanetsImg = styled.div`
   background-position: center;
   width: 40rem;
   height: 500rem;
+
+  @media (max-width: 768px) {
+    width: 15rem;
+    height: 15rem;
+    justify-self: center;
+    align-self: center;
+    margin-top:3rem;
 `;
 
 const RightSideContent = styled.div`
@@ -48,6 +75,16 @@ const RightSideContent = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Hr = styled.div`
@@ -57,49 +94,87 @@ const Hr = styled.div`
   height: 1px;
 
   @media (max-width: 768px) {
-    display: none;
+    margin: 1rem 0;
   }
+`;
 
-  @media (min-width: 769px) and (max-width: 1024px) {
-    display: none;
+const Info = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  alingn-items: center;
+  gap: 4rem;
+  text-align: start;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 2rem;
+  }
+`;
+
+const InfoText = styled.p`
+  font-size: 0.8rem;
+  color: gray;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
+`;
+
+const InfoData = styled.p`
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
   }
 `;
 
 export default function Destination() {
+  const [dest, setDest] = useState(data.destinations[0]);
+
+  const handleClick = (destinationName) => {
+    setDest(destinationName);
+  };
+
   return (
     <>
       <Content
-        numPage
+        numPage="01"
         headingText="PICK YOUR DESTINATION"
-        desktopbgImg={HomeDesktopBgImg}
-        tabletbgImg={HomeTabletBgImg}
-        mobilebgImg={HomeMobileBgImg}
+        $desktopbgImg={HomeDesktopBgImg}
+        $tabletbgImg={HomeTabletBgImg}
+        $mobilebgImg={HomeMobileBgImg}
         leftSideContent={<PlanetsImg />}
         rightSideContent={
           <RightSideContent>
             <Carounsel>
-              <CarouselContent>MOON</CarouselContent>
-              <CarouselContent>MARS</CarouselContent>
-              <CarouselContent>MOON</CarouselContent>
-              <CarouselContent>MARS</CarouselContent>
+              {data.destinations.map((destination) => {
+                return (
+                  <CarouselContent
+                    key={destination.name}
+                    onClick={() => handleClick(destination)}
+                    $active={dest.name === destination.name}
+                  >
+                    {destination.name}
+                  </CarouselContent>
+                );
+              })}
             </Carounsel>
-            <Span>MARS</Span>
-            <Paragraph>
-              Don’t forget to pack your hiking boots. You’ll need them to tackle
-              Olympus Mons, the tallest planetary mountain in our solar system.
-              It’s two and a half times the size of Everest!
-            </Paragraph>
+            <Span key={dest.name}>{dest.name}</Span>
+            <Paragraph>{dest.description}</Paragraph>
             <Hr />
-            <div>
+            <Info>
               <div>
-                <p></p>
-                <p></p>
+                <InfoText>AVG. DISTANCE</InfoText>
+                <InfoData>{dest.distance} </InfoData>
               </div>
               <div>
-                <p></p>
-                <p></p>
+                <InfoText>EST. TRAVEL TIME</InfoText>
+                <InfoData>{dest.travel}</InfoData>
               </div>
-            </div>
+            </Info>
           </RightSideContent>
         }
       />

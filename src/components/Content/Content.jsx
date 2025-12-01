@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   background-color: #000000;
-  background-image: ${(props) => `url(${props.desktopbgImg})`};
+  background-image: ${(props) => `url(${props.$desktopbgImg})`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -13,11 +13,11 @@ const Container = styled.div`
   width: 100vw;
 
   @media (max-width: 768px) {
-    background-image: ${(props) => `url(${props.mobilebgImg})`};
+    background-image: ${(props) => `url(${props.$mobilebgImg})`};
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    background-image: ${(props) => `url(${props.tabletbgImg})`};
+    background-image: ${(props) => `url(${props.$tabletbgImg})`};
   }
 `;
 
@@ -45,8 +45,20 @@ const ContainerContent = styled.div`
 const ContentHeading = styled.h2`
   position: absolute;
   top: 10rem;
-  left: 6rem;
+  left: 9rem;
   font-weight: 300;
+
+  @media (max-width: 768px) {
+    top: 6rem;
+    left: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    top: 4rem;
+    left: 2rem;
+    font-size: 1.5rem;
+  }
 `;
 
 const ContentDiv = styled.div`
@@ -54,18 +66,20 @@ const ContentDiv = styled.div`
   height: 30rem;
   display: flex;
   flex-direction: column;
-
-  padding: 4rem;
-  text-align: center;
+  padding: 5rem 6rem;
+  text-align: start;
 
   @media (max-width: 768px) {
-    padding: 2.5rem 2rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    height: 20rem;
     width: 100%;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 100%;
     padding: 4rem;
+    text-align: center;
   }
 `;
 
@@ -96,9 +110,9 @@ const Span = styled.span`
 const CarouselContent = styled.div``;
 
 export default function Content({
-  desktopbgImg,
-  tabletbgImg,
-  mobilebgImg,
+  $desktopbgImg,
+  $tabletbgImg,
+  $mobilebgImg,
   headingText,
   leftSideContent,
   rightSideContent,
@@ -106,9 +120,9 @@ export default function Content({
 }) {
   return (
     <Container
-      desktopbgImg={desktopbgImg}
-      tabletbgImg={tabletbgImg}
-      mobilebgImg={mobilebgImg}
+      $desktopbgImg={$desktopbgImg}
+      $tabletbgImg={$tabletbgImg}
+      $mobilebgImg={$mobilebgImg}
     >
       <ContentHeading>
         <Span>{numPage}</Span> {headingText}
