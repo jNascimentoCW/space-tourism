@@ -66,6 +66,7 @@ const ContentDiv = styled.div`
   height: 30rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 5rem 6rem;
   text-align: start;
 

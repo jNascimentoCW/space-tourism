@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import styled from "styled-components";
 
-import HomeDesktopBgImg from "/src/assets/destination/background-destination-desktop.jpg";
-import HomeTabletBgImg from "/src/assets/destination/background-destination-tablet.jpg";
-import HomeMobileBgImg from "/src/assets/destination/background-destination-mobile.jpg";
+import DestDesktopBgImg from "/src/assets/destination/background-destination-desktop.jpg";
+import DestTabletBgImg from "/src/assets/destination/background-destination-tablet.jpg";
+import DestMobileBgImg from "/src/assets/destination/background-destination-mobile.jpg";
 
 import Content from "../Content/Content";
 
@@ -59,8 +59,8 @@ const PlanetsImg = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  width: 40rem;
-  height: 500rem;
+  width: 35rem;
+  height: 35rem;
 
   @media (max-width: 768px) {
     width: 15rem;
@@ -143,9 +143,9 @@ export default function Destination() {
       <Content
         numPage="01"
         headingText="PICK YOUR DESTINATION"
-        $desktopbgImg={HomeDesktopBgImg}
-        $tabletbgImg={HomeTabletBgImg}
-        $mobilebgImg={HomeMobileBgImg}
+        $desktopbgImg={DestDesktopBgImg}
+        $tabletbgImg={DestTabletBgImg}
+        $mobilebgImg={DestMobileBgImg}
         leftSideContent={<PlanetsImg />}
         rightSideContent={
           <RightSideContent>

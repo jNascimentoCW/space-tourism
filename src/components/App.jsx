@@ -1,14 +1,14 @@
 import "./App.css";
 import Destination from "./Destination/Destination";
-import Main from "./Main/Main";
+import Home from "./Home/Home";
 import Navbar from "./Navbar/Navbar";
 
 function App() {
   return (
     <>
       <Navbar />
-      {/* <Main /> */}
-      <Destination />
+      <Home />
+      {/* <Destination /> */}
     </>
   );
 }
