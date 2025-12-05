@@ -37,6 +37,10 @@ const LeftContent = styled.div`
 
 const TopParagraph = styled.p`
   font-size: 1.7rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const BottomParagraph = styled.p`
@@ -53,7 +57,7 @@ const Span = styled.span`
   text-transform: uppercase;
 
   @media (max-width: 768px) {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 `;
 

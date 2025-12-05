@@ -73,7 +73,7 @@ const ContentDiv = styled.div`
   @media (max-width: 768px) {
     text-align: center;
     padding: 1rem 2rem;
-    height: 20rem;
+    height: 18rem;
     width: 100%;
   }
 
