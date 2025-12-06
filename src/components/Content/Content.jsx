@@ -55,7 +55,7 @@ const ContentHeading = styled.h2`
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    top: 4rem;
+    top: 9rem;
     left: 2rem;
     font-size: 1.5rem;
   }
@@ -71,6 +71,8 @@ const ContentDiv = styled.div`
   text-align: start;
 
   @media (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 1rem 2rem;
     height: 18rem;
@@ -81,6 +83,8 @@ const ContentDiv = styled.div`
     width: 100%;
     padding: 4rem;
     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

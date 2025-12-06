@@ -55,7 +55,7 @@ const Span = styled.span`
 `;
 
 const PlanetsImg = styled.div`
-  background-image: url("/src/assets/destination/image-mars.png");
+  background-image: ${(props) => `url(${props.$image})`};
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -67,7 +67,8 @@ const PlanetsImg = styled.div`
     height: 15rem;
     justify-self: center;
     align-self: center;
-    margin-top:3rem;
+    margin-top: 3rem;
+  }
 `;
 
 const RightSideContent = styled.div`
@@ -134,8 +135,8 @@ const InfoData = styled.p`
 export default function Destination() {
   const [dest, setDest] = useState(data.destinations[0]);
 
-  const handleClick = (destinationName) => {
-    setDest(destinationName);
+  const handleClick = (destination) => {
+    setDest(destination);
   };
 
   return (
@@ -146,7 +147,9 @@ export default function Destination() {
         $desktopbgImg={DestDesktopBgImg}
         $tabletbgImg={DestTabletBgImg}
         $mobilebgImg={DestMobileBgImg}
-        leftSideContent={<PlanetsImg />}
+        leftSideContent={
+          <PlanetsImg $image={dest.images.png.replace("./", "/src/")} />
+        }
         rightSideContent={
           <RightSideContent>
             <Carounsel>
