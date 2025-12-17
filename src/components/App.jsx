@@ -1,17 +1,20 @@
 import { useState } from "react";
 
 import "./App.css";
-import Destination from "./Destination/Destination";
-import Home from "./Home/Home";
 import Navbar from "./Navbar/Navbar";
+import Home from "./Home/Home";
+import Destination from "./Destination/Destination";
+import Crew from "./Crew/Crew";
 
 function App() {
   const [page, setPage] = useState("main");
+
   return (
     <>
       <Navbar />
-      <Home />
+      {/* <Home /> */}
       {/* <Destination /> */}
+      <Crew />
     </>
   );
 }
