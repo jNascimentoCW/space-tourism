@@ -71,7 +71,7 @@ const DivBtn = styled(Link)`
   }
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
   padding: 2rem;
   cursor: pointer;
 
@@ -119,10 +119,8 @@ export default function Navbar() {
 
   return (
     <NavbarDiv>
-      <Logo>
-        <a href="#home">
-          <img src={LogoImg} alt="Logo" />
-        </a>
+      <Logo to="/">
+        <img src={LogoImg} alt="Logo" />
       </Logo>
 
       <HamburgerIcon onClick={() => setOpen(!open)}>

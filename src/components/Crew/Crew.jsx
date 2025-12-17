@@ -25,7 +25,7 @@ const CrewDiv = styled.div`
 `;
 
 const CrewContent = styled.div`
-  /* min-height: 16rem; */
+  min-height: 16rem;
 
   @media (max-width: 768px) {
     min-height: 14rem;

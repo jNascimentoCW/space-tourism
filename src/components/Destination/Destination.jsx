@@ -59,7 +59,7 @@ const PlanetsImg = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  min-width: 26rem;
+  width: 26rem;
   height: 26rem;
 
   @media (max-width: 768px) {
@@ -79,7 +79,7 @@ const PlanetsImg = styled.div`
 const RightSideContent = styled.div`
   display: flex;
   flex-direction: column;
-  /* min-height: 32rem; */
+  min-height: 32rem;
   width: 100%;
 
   @media (max-width: 768px) {
