@@ -18,7 +18,7 @@ const Paragraph = styled.p`
   }
 `;
 
-const Carounsel = styled.div`
+const Carousel = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -163,7 +163,7 @@ export default function Destination() {
         leftSideContent={<PlanetsImg $image={getImageUrl(dest.name)} />}
         rightSideContent={
           <RightSideContent>
-            <Carounsel>
+            <Carousel>
               {data.destinations.map((destination) => {
                 return (
                   <CarouselContent
@@ -175,7 +175,7 @@ export default function Destination() {
                   </CarouselContent>
                 );
               })}
-            </Carounsel>
+            </Carousel>
             <Span>{dest.name}</Span>
             <Paragraph>{dest.description}</Paragraph>
             <Hr />

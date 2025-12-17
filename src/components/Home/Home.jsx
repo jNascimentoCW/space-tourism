@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Content from "../Content/Content";
 import HomeDesktopBgImg from "/src/assets/home/background-home-desktop.jpg";
 import HomeTabletBgImg from "/src/assets/home/background-home-tablet.jpg";
@@ -5,7 +7,7 @@ import HomeMobileBgImg from "/src/assets/home/background-home-mobile.jpg";
 
 import styled from "styled-components";
 
-const ExploreBtn = styled.p`
+const ExploreBtn = styled(Link)`
   background: white;
   border-radius: 50%;
   width: 15rem;
@@ -19,6 +21,7 @@ const ExploreBtn = styled.p`
   position: relative;
   font-weight: 500;
   font-size: 1.2rem;
+  text-decoration: none;
 
   &:hover {
     box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.8);
@@ -80,7 +83,7 @@ export default function Home() {
           </BottomParagraph>
         </LeftContent>
       }
-      rightSideContent={<ExploreBtn>EXPLORE</ExploreBtn>}
+      rightSideContent={<ExploreBtn to="/destination">EXPLORE</ExploreBtn>}
     />
   );
 }

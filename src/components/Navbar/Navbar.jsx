@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -42,7 +42,7 @@ const NavbarNav = styled.div`
   }
 `;
 
-const DivBtn = styled(Link)`
+const DivBtn = styled(NavLink)`
   text-decoration: none;
   color: white;
   display: flex;
@@ -53,8 +53,8 @@ const DivBtn = styled(Link)`
   gap: 0.5rem;
   border-bottom: 3px solid transparent;
 
-  &:active {
-    background-color: rgba(0, 0, 0, 0.1);
+  &.active {
+    border-bottom: 3px solid white;
   }
 
   &:hover {
@@ -71,7 +71,7 @@ const DivBtn = styled(Link)`
   }
 `;
 
-const Logo = styled(Link)`
+const Logo = styled(NavLink)`
   padding: 2rem;
   cursor: pointer;
 
@@ -130,7 +130,7 @@ export default function Navbar() {
       {/* NAV MENU */}
       <NavbarNav open={open}>
         <Hr />
-        <DivBtn to="/">
+        <DivBtn to="/" end>
           <NumberSpan>00</NumberSpan>
           <NavP>HOME</NavP>
         </DivBtn>
