@@ -64,7 +64,7 @@ const PlanetsImg = styled.div`
 
   @media (max-width: 768px) {
     width: 15rem;
-    min-height: 15rem;
+    height: 15rem;
     justify-self: center;
     align-self: center;
     margin-top: 3rem;
@@ -79,11 +79,11 @@ const PlanetsImg = styled.div`
 const RightSideContent = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 32rem;
+  /* min-height: 32rem; */
   width: 100%;
 
   @media (max-width: 768px) {
-    min-height: 36rem;
+    min-height: 22rem;
     align-items: center;
     text-align: center;
   }

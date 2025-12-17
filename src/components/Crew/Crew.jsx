@@ -16,7 +16,7 @@ const CrewDiv = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 2rem;
-    min-height: 22rem;
+    min-height: 17rem;
     align-items: center;
     text-align: center;
     flex-direction: column-reverse;
@@ -25,7 +25,7 @@ const CrewDiv = styled.div`
 `;
 
 const CrewContent = styled.div`
-  min-height: 16rem;
+  /* min-height: 16rem; */
 
   @media (max-width: 768px) {
     min-height: 14rem;

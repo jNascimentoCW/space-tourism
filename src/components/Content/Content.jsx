@@ -35,7 +35,7 @@ const ContainerContent = styled.div`
     flex-direction: ${(props) =>
       props.$reverseOnMobile ? "column-reverse" : "column"};
     min-height: calc(100svh - 6rem);
-    padding: 6rem 0;
+    padding: 6rem 0 1rem;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
