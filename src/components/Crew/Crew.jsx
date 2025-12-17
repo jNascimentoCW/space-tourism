@@ -105,7 +105,7 @@ const CarouselElement = styled.div`
 `;
 
 const CrewImg = styled.div`
-  background-image: ${(props) => `url(${props.$image})`};
+  background-image: url(${(props) => props.$image});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -144,6 +144,14 @@ export default function Crew() {
     setCrew(crewPerson);
   };
 
+  const getImageUrl = (name) => {
+    const formattedName = name.toLowerCase().replace(" ", "-");
+    return new URL(
+      `../../assets/crew/image-${formattedName}.png`,
+      import.meta.url
+    ).href;
+  };
+
   return (
     <Content
       numPage="02"
@@ -172,9 +180,7 @@ export default function Crew() {
           </Carrousel>
         </CrewDiv>
       }
-      rightSideContent={
-        <CrewImg $image={crew.images.png.replace("./", "/src/")} />
-      }
+      rightSideContent={<CrewImg $image={getImageUrl(crew.name)} />}
     ></Content>
   );
 }

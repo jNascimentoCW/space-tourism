@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import styled from "styled-components";
 
-import DestDesktopBgImg from "/src/assets/destination/background-destination-desktop.jpg";
-import DestTabletBgImg from "/src/assets/destination/background-destination-tablet.jpg";
-import DestMobileBgImg from "/src/assets/destination/background-destination-mobile.jpg";
+import DestDesktopBgImg from "../../assets/destination/background-destination-desktop.jpg";
+import DestTabletBgImg from "../../assets/destination/background-destination-tablet.jpg";
+import DestMobileBgImg from "../../assets/destination/background-destination-mobile.jpg";
 
 import Content from "../Content/Content";
 
@@ -145,6 +145,13 @@ export default function Destination() {
     setDest(destination);
   };
 
+  const getImageUrl = (name) => {
+    return new URL(
+      `../../assets/destination/image-${name.toLowerCase()}.png`,
+      import.meta.url
+    ).href;
+  };
+
   return (
     <>
       <Content
@@ -153,9 +160,7 @@ export default function Destination() {
         $desktopbgImg={DestDesktopBgImg}
         $tabletbgImg={DestTabletBgImg}
         $mobilebgImg={DestMobileBgImg}
-        leftSideContent={
-          <PlanetsImg $image={dest.images.png.replace("./", "/src/")} />
-        }
+        leftSideContent={<PlanetsImg $image={getImageUrl(dest.name)} />}
         rightSideContent={
           <RightSideContent>
             <Carounsel>

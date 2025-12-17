@@ -6,10 +6,9 @@ import Navbar from "./Navbar/Navbar";
 import Home from "./Home/Home";
 import Destination from "./Destination/Destination";
 import Crew from "./Crew/Crew";
+import Technology from "./Technology/Technology";
 
 function App() {
-  const [page, setPage] = useState("main");
-
   return (
     <BrowserRouter>
       <Navbar />
@@ -17,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/destination" element={<Destination />} />
         <Route path="/crew" element={<Crew />} />
+        <Route path="/" element={<Technology />} />
       </Routes>
     </BrowserRouter>
   );
