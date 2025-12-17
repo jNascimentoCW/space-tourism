@@ -59,25 +59,31 @@ const PlanetsImg = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  width: 35rem;
-  height: 35rem;
+  min-width: 26rem;
+  height: 26rem;
 
   @media (max-width: 768px) {
     width: 15rem;
-    height: 15rem;
+    min-height: 15rem;
     justify-self: center;
     align-self: center;
     margin-top: 3rem;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 25rem;
+    min-height: 25rem;
   }
 `;
 
 const RightSideContent = styled.div`
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  min-height: 32rem;
   width: 100%;
 
   @media (max-width: 768px) {
+    min-height: 36rem;
     align-items: center;
     text-align: center;
   }
@@ -103,7 +109,7 @@ const Info = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: start;
-  alingn-items: center;
+  align-items: center;
   gap: 4rem;
   text-align: start;
 
@@ -165,7 +171,7 @@ export default function Destination() {
                 );
               })}
             </Carounsel>
-            <Span key={dest.name}>{dest.name}</Span>
+            <Span>{dest.name}</Span>
             <Paragraph>{dest.description}</Paragraph>
             <Hr />
             <Info>

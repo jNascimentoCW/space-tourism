@@ -6,10 +6,10 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 
   @media (max-width: 768px) {
@@ -26,19 +26,25 @@ const ContainerContent = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;
-  height: 100vh;
+  padding: 10rem 4rem 0rem;
+  min-height: 100vh;
 
   @media (max-width: 768px) {
-    justify-content: space-evenly;
-    flex-direction: column;
-    height: auto;
+    /* justify-content: space-evenly; */
+    align-items: flex-start;
+    flex-direction: ${(props) =>
+      props.$reverseOnMobile ? "column-reverse" : "column"};
+    min-height: calc(100svh - 6rem);
+    padding: 6rem 0;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
     padding-top: 12rem;
     flex-direction: column;
+    align-items: flex-start;
     height: auto;
+    /* padding: 10rem 4rem 0; */
+    min-height: 0rem;
   }
 `;
 
@@ -63,25 +69,25 @@ const ContentHeading = styled.h2`
 
 const ContentDiv = styled.div`
   width: 50%;
-  height: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 6rem;
   text-align: start;
+  padding-left: 3rem;
 
   @media (max-width: 768px) {
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 1rem 2rem;
-    height: 18rem;
+    min-height: 18rem;
     width: 100%;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 100%;
-    padding: 4rem;
+    min-height: 20rem;
+    padding: 3rem 0rem;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -122,6 +128,7 @@ export default function Content({
   leftSideContent,
   rightSideContent,
   numPage,
+  $reverseOnMobile,
 }) {
   return (
     <Container
@@ -132,7 +139,7 @@ export default function Content({
       <ContentHeading>
         <Span>{numPage}</Span> {headingText}
       </ContentHeading>
-      <ContainerContent>
+      <ContainerContent $reverseOnMobile={$reverseOnMobile}>
         <ContentDiv>{leftSideContent}</ContentDiv>
         <ContentDiv>{rightSideContent}</ContentDiv>
       </ContainerContent>
