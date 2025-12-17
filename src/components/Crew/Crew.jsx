@@ -109,12 +109,14 @@ const CrewImg = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  width: 28rem;
-  height: 28rem;
-  /* position: absolute; */
-  /* bottom: 0; */
+  width: 35rem;
+  height: 35rem;
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
 
   @media (max-width: 768px) {
+    position: inherit;
     /* top: 8rem; */
     /* bottom: initial; */
     width: 20rem;
@@ -127,6 +129,9 @@ const CrewImg = styled.div`
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     bottom: 0;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
     width: 37rem;
     height: 37rem;
   }

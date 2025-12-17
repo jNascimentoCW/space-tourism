@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./App.css";
 import Navbar from "./Navbar/Navbar";
@@ -10,12 +11,14 @@ function App() {
   const [page, setPage] = useState("main");
 
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      {/* <Home /> */}
-      {/* <Destination /> */}
-      <Crew />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/destination" element={<Destination />} />
+        <Route path="/crew" element={<Crew />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

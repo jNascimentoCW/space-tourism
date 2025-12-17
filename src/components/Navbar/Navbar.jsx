@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -41,7 +42,9 @@ const NavbarNav = styled.div`
   }
 `;
 
-const DivBtn = styled.div`
+const DivBtn = styled(Link)`
+  text-decoration: none;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,22 +132,22 @@ export default function Navbar() {
       {/* NAV MENU */}
       <NavbarNav open={open}>
         <Hr />
-        <DivBtn>
+        <DivBtn to="/">
           <NumberSpan>00</NumberSpan>
           <NavP>HOME</NavP>
         </DivBtn>
 
-        <DivBtn>
+        <DivBtn to="/destination">
           <NumberSpan>01</NumberSpan>
           <NavP>DESTINATION</NavP>
         </DivBtn>
 
-        <DivBtn>
+        <DivBtn to="/crew">
           <NumberSpan>02</NumberSpan>
           <NavP>CREW</NavP>
         </DivBtn>
 
-        <DivBtn>
+        <DivBtn to="technology">
           <NumberSpan>03</NumberSpan>
           <NavP>TECHNOLOGY</NavP>
         </DivBtn>
