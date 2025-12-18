@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +13,7 @@ const NavbarDiv = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  z-index: 1000;
+  z-index: 2000;
 `;
 
 const NavbarNav = styled.div`
@@ -24,6 +24,7 @@ const NavbarNav = styled.div`
   backdrop-filter: blur(10px);
   padding: 0 9rem 0 5rem;
   width: 60%;
+  z-index: 2002;
 
   @media (max-width: 768px) {
     position: absolute;
@@ -65,6 +66,10 @@ const DivBtn = styled(NavLink)`
     width: 100vw;
     border-bottom: 0px;
 
+    &.active {
+      border-bottom: 0px;
+    }
+
     &:hover {
       border-bottom: 0px;
     }
@@ -104,10 +109,21 @@ const NavP = styled.p`
   font-weight: lighter;
 `;
 
+const Overlay = styled.div`
+  display: ${(props) => (props.open ? "block" : "none")};
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2001;
+`;
+
 const HamburgerIcon = styled.div`
   display: none;
   cursor: pointer;
   padding: 1rem;
+  z-index: 2003;
 
   @media (max-width: 768px) {
     display: block;
@@ -116,12 +132,19 @@ const HamburgerIcon = styled.div`
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
 
   return (
     <NavbarDiv>
       <Logo to="/">
         <img src={LogoImg} alt="Logo" />
       </Logo>
+
+      <Overlay open={open} onClick={() => setOpen(false)} />
 
       <HamburgerIcon onClick={() => setOpen(!open)}>
         <FontAwesomeIcon icon={open ? faXmark : faBars} size="2xl" />
@@ -145,7 +168,7 @@ export default function Navbar() {
           <NavP>CREW</NavP>
         </DivBtn>
 
-        <DivBtn to="technology">
+        <DivBtn to="/technology">
           <NumberSpan>03</NumberSpan>
           <NavP>TECHNOLOGY</NavP>
         </DivBtn>
