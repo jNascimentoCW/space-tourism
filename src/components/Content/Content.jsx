@@ -53,6 +53,7 @@ const ContentHeading = styled.h2`
   top: 10rem;
   left: 9rem;
   font-weight: 300;
+  letter-spacing: 0.25rem;
 
   @media (max-width: 768px) {
     top: 6rem;

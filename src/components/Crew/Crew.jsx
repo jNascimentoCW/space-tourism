@@ -11,8 +11,8 @@ import { useState } from "react";
 const CrewDiv = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   min-height: 26rem;
+  padding-left: 2rem;
 
   @media (max-width: 768px) {
     padding: 0 2rem;
@@ -98,8 +98,6 @@ const CarouselElement = styled.div`
   }
 
   @media (max-width: 768px) {
-    /* position: relative; */
-    /* top: 2rem; */
     margin-top: 0;
   }
 `;
@@ -110,17 +108,15 @@ const CrewImg = styled.div`
   background-size: contain;
   background-position: center;
   width: 35rem;
-  height: 35rem;
+  min-height: 32rem;
   position: absolute;
   bottom: 0;
   right: 2rem;
 
   @media (max-width: 768px) {
     position: inherit;
-    /* top: 8rem; */
-    /* bottom: initial; */
     width: 20rem;
-    height: 20rem;
+    min-height: 20rem;
     justify-self: center;
     align-self: center;
     margin-top: 3rem;
@@ -133,7 +129,7 @@ const CrewImg = styled.div`
     right: 50%;
     transform: translateX(-50%);
     width: 37rem;
-    height: 37rem;
+    min-height: 37rem;
   }
 `;
 
