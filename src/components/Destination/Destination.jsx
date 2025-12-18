@@ -153,45 +153,43 @@ export default function Destination() {
   };
 
   return (
-    <>
-      <Content
-        numPage="01"
-        headingText="PICK YOUR DESTINATION"
-        $desktopbgImg={DestDesktopBgImg}
-        $tabletbgImg={DestTabletBgImg}
-        $mobilebgImg={DestMobileBgImg}
-        leftSideContent={<PlanetsImg $image={getImageUrl(dest.name)} />}
-        rightSideContent={
-          <RightSideContent>
-            <Carousel>
-              {data.destinations.map((destination) => {
-                return (
-                  <CarouselContent
-                    key={destination.name}
-                    onClick={() => handleClick(destination)}
-                    $active={dest.name === destination.name}
-                  >
-                    {destination.name}
-                  </CarouselContent>
-                );
-              })}
-            </Carousel>
-            <Span>{dest.name}</Span>
-            <Paragraph>{dest.description}</Paragraph>
-            <Hr />
-            <Info>
-              <div>
-                <InfoText>AVG. DISTANCE</InfoText>
-                <InfoData>{dest.distance} </InfoData>
-              </div>
-              <div>
-                <InfoText>EST. TRAVEL TIME</InfoText>
-                <InfoData>{dest.travel}</InfoData>
-              </div>
-            </Info>
-          </RightSideContent>
-        }
-      />
-    </>
+    <Content
+      numPage="01"
+      headingText="PICK YOUR DESTINATION"
+      $desktopbgImg={DestDesktopBgImg}
+      $tabletbgImg={DestTabletBgImg}
+      $mobilebgImg={DestMobileBgImg}
+      leftSideContent={<PlanetsImg $image={getImageUrl(dest.name)} />}
+      rightSideContent={
+        <RightSideContent>
+          <Carousel>
+            {data.destinations.map((destination) => {
+              return (
+                <CarouselContent
+                  key={destination.name}
+                  onClick={() => handleClick(destination)}
+                  $active={dest.name === destination.name}
+                >
+                  {destination.name}
+                </CarouselContent>
+              );
+            })}
+          </Carousel>
+          <Span>{dest.name}</Span>
+          <Paragraph>{dest.description}</Paragraph>
+          <Hr />
+          <Info>
+            <div>
+              <InfoText>AVG. DISTANCE</InfoText>
+              <InfoData>{dest.distance} </InfoData>
+            </div>
+            <div>
+              <InfoText>EST. TRAVEL TIME</InfoText>
+              <InfoData>{dest.travel}</InfoData>
+            </div>
+          </Info>
+        </RightSideContent>
+      }
+    />
   );
 }
