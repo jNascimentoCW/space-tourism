@@ -58,7 +58,7 @@ const ContentHeading = styled.h2`
   @media (max-width: 768px) {
     top: 6rem;
     left: 1.5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {

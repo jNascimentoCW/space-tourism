@@ -42,7 +42,7 @@ const CarouselContent = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin: 1rem;
+    margin: 0 1rem;
     width: 3.5rem;
     height: 3.5rem;
   }
