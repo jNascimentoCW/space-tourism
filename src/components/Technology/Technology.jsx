@@ -42,7 +42,7 @@ const CarouselContent = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin: 1rem;
+    margin: 0 1rem;
     width: 3.5rem;
     height: 3.5rem;
   }
@@ -66,7 +66,7 @@ const TechContent = styled.div`
   padding: 1rem;
 
   @media (max-width: 768px) {
-    min-height: 27rem;
+    min-height: 13rem;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -77,17 +77,33 @@ const TechHeader = styled.p`
   text-transform: uppercase;
   font-weight: 100;
   font-size: 1.2rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const TechName = styled.h2`
   font-size: 3.1rem;
   font-weight: 300;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    font-size: 2.8rem;
+  }
 `;
 
 const TechDescription = styled.p`
   font-weight: 100;
   font-size: 1.2rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const TechImg = styled.div`
@@ -102,14 +118,14 @@ const TechImg = styled.div`
 
   @media (max-width: 768px) {
     position: inherit;
-    min-height: 15rem;
+    max-height: 12rem;
     width: 100vw;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
     position: inherit;
     width: 100vw;
-    min-height: 21rem;
+    height: 21rem;
   }
 `;
 
